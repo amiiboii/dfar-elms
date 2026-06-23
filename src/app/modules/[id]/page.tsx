@@ -177,9 +177,9 @@ export default function ModuleDetailPage({ params }: { params: Promise<{ id: str
                       <h3 className="text-xl font-bold text-primary-dark mb-2">{lessonTitle}</h3>
                       <p className="text-gray-mid text-sm mb-1">5 multiple choice questions</p>
                       <p className="text-gray-mid text-xs mb-6">Test your understanding of this section before moving on</p>
-                      <button className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition">
+                      <Link href={`/assessment/${mod.id}`} className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition inline-block">
                         <i className="fa-solid fa-play mr-2" />Start Quiz
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 )}
@@ -236,14 +236,10 @@ export default function ModuleDetailPage({ params }: { params: Promise<{ id: str
                   <Link href={`/certificate/${mod.id}`} className="w-full block text-center bg-green-600 text-white font-semibold py-2.5 rounded-lg hover:bg-green-700 transition text-sm">
                     <i className="fa-solid fa-download mr-2" />{t("download_certificate")}
                   </Link>
-                ) : mod.progress >= 80 ? (
+                ) : (
                   <Link href={`/assessment/${mod.id}`} className="w-full block text-center bg-accent text-primary-dark font-semibold py-2.5 rounded-lg hover:bg-yellow-400 transition text-sm">
                     <i className="fa-solid fa-clipboard-check mr-2" />{t("take_assessment")}
                   </Link>
-                ) : (
-                  <button className="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:bg-primary-dark transition text-sm">
-                    <i className="fa-solid fa-play mr-2" />{mod.progress === 0 ? t("start_learning") : t("continue_learning")}
-                  </button>
                 )}
               </div>
 
