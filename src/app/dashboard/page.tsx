@@ -54,9 +54,9 @@ export default function DashboardPage() {
               <Link href="/modules" className="px-5 py-2 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-dark transition">
                 <i className="fa-solid fa-book-open mr-2" />{t("modules")}
               </Link>
-              <button className="px-5 py-2 border-2 border-gray-200 text-gray-700 text-sm font-semibold rounded-lg hover:bg-gray-50 transition">
-                <i className="fa-solid fa-gear mr-2" />Settings
-              </button>
+              <Link href="/admin" className="px-5 py-2 border-2 border-gray-200 text-gray-700 text-sm font-semibold rounded-lg hover:bg-gray-50 transition">
+                <i className="fa-solid fa-shield-halved mr-2" />Admin Panel
+              </Link>
             </div>
           </div>
 
