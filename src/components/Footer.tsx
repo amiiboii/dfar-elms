@@ -19,7 +19,7 @@ export default function Footer() {
               <img
                 src="/logo.png"
                 alt="DFAR"
-                className="h-14 w-14 object-contain object-left shrink-0"
+                className="h-24 w-auto object-contain shrink-0"
               />
             </div>
             <p className="text-white/60 text-sm mb-5 leading-relaxed">
@@ -97,7 +97,7 @@ export default function Footer() {
           <p>
             Developed by{" "}
             <a href="https://futuora.com/" target="_blank" rel="noopener noreferrer" className="text-accent font-semibold hover:text-yellow-300 transition">
-              Futuora Engineering
+              Futuora
             </a>
           </p>
         </div>
