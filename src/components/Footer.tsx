@@ -17,9 +17,9 @@ export default function Footer() {
           <div>
             <div className="mb-5">
               <img
-                src="/favicon.png"
+                src="/logo.png"
                 alt="DFAR"
-                className="h-12 w-auto"
+                className="h-14 w-14 object-contain object-left shrink-0"
               />
             </div>
             <p className="text-white/60 text-sm mb-5 leading-relaxed">
