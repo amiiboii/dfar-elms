@@ -1,8 +1,22 @@
 "use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { useLang } from "@/lib/LangContext";
 
 export default function Hero() {
   const { t } = useLang();
+  const router = useRouter();
+  const [query, setQuery] = useState("");
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (query.trim()) {
+      router.push(`/modules?q=${encodeURIComponent(query.trim())}`);
+    } else {
+      router.push("/modules");
+    }
+  };
+
   return (
     <section className="relative min-h-[550px] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1600&q=80')] bg-cover bg-center" />
@@ -32,17 +46,19 @@ export default function Hero() {
           </span>
         </div>
 
-        <div className="max-w-xl mx-auto flex rounded-lg overflow-hidden shadow-2xl">
+        <form onSubmit={handleSearch} className="max-w-xl mx-auto flex rounded-lg overflow-hidden shadow-2xl">
           <input
             type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
             placeholder={t("search_placeholder")}
             className="flex-1 px-5 py-4 text-gray-800 placeholder-gray-400 text-base outline-none bg-white"
           />
-          <button className="bg-accent text-primary-dark font-bold px-8 py-4 hover:bg-yellow-400 transition flex items-center gap-2">
+          <button type="submit" className="bg-accent text-primary-dark font-bold px-8 py-4 hover:bg-yellow-400 transition flex items-center gap-2">
             <i className="fa-solid fa-magnifying-glass" />
             {t("search")}
           </button>
-        </div>
+        </form>
       </div>
     </section>
   );
