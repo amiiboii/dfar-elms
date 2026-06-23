@@ -32,6 +32,16 @@ export default function TopCourses() {
                       </span>
                     )}
                   </div>
+                  {mod.progress === 100 && (
+                    <div className="absolute top-3 right-3 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+                      <i className="fa-solid fa-circle-check" /> {t("completed")}
+                    </div>
+                  )}
+                  {mod.progress > 0 && mod.progress < 100 && (
+                    <div className="absolute top-3 right-3 bg-white/90 backdrop-blur text-primary text-xs font-bold px-3 py-1 rounded-full">
+                      {mod.progress}% {t("progress")}
+                    </div>
+                  )}
                   <div className="absolute bottom-3 left-3 flex items-center gap-2 text-white text-xs">
                     <span className="bg-black/60 backdrop-blur px-2.5 py-1 rounded">
                       <i className="fa-regular fa-clock mr-1" />{mod.duration}
