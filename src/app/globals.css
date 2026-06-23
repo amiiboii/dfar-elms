@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #ffffff;
+  --color-foreground: #1f1f1f;
+  --color-primary: #0066CC;
+  --color-primary-dark: #0D2247;
+  --color-primary-light: #00B6EA;
+  --color-accent: #F2D40C;
+  --color-navy: #00277F;
+  --color-blue-mid: #135ECC;
+  --color-gray-light: #f9f9f9;
+  --color-gray-mid: #666666;
+  --color-danger: #dc2626;
+  --color-success: #16a34a;
+  --font-sans: "Roboto", "Catamaran", sans-serif;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, rgba(13,34,71,0.92) 0%, rgba(0,102,204,0.85) 100%);
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,102,204,0.15);
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+}
+
+.category-card:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+.category-card:hover .cat-icon {
+  color: white;
+}
+
+.category-card:hover .cat-count {
+  color: rgba(255,255,255,0.8);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-count {
+  animation: countUp 0.8s ease-out forwards;
+}
