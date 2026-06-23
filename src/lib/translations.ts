@@ -220,7 +220,6 @@ export const translations: Record<Lang, Record<string, string>> = {
     conservation: "සංරක්ෂණය",
     boat_maintenance: "බෝට්ටු නඩත්තුව",
     export_standards: "අපනයන ප්‍රමිති",
-    aquaculture: "ජලජ ගොවිතැන",
 
     register_today: "අද ලියාපදිංචි වන්න",
     register_title: "ඔබේ ධීවර ඉගෙනුම් ගමන ආරම්භ කරන්න —",
