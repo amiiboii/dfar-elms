@@ -16,9 +16,9 @@ export default function LoginPage() {
           <div className="bg-white rounded-2xl shadow-xl p-8">
             <div className="text-center mb-8">
               <img
-                src="https://www.fisheries.gov.lk/web/templates/poora_temp/images/new/logo.png"
+                src="/logo-black.png"
                 alt="DFAR"
-                className="h-16 mx-auto mb-4"
+                className="h-10 mx-auto mb-4"
               />
               <h1 className="text-2xl font-bold text-primary-dark">{t("welcome_back")}</h1>
               <p className="text-gray-mid text-sm mt-1">{t("login_desc")}</p>

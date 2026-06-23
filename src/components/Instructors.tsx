@@ -3,25 +3,25 @@ const instructors = [
     name: "Dr. Kumara Perera",
     role: "Marine Biology Expert",
     students: "2.4k+",
-    image: "https://randomuser.me/api/portraits/men/86.jpg",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80",
   },
   {
     name: "Prof. Nimal Fernando",
     role: "Fisheries Management",
     students: "3.1k+",
-    image: "https://randomuser.me/api/portraits/men/45.jpg",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80",
   },
   {
     name: "Mrs. Chamari Silva",
     role: "Aquaculture Specialist",
     students: "1.8k+",
-    image: "https://randomuser.me/api/portraits/women/79.jpg",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&q=80",
   },
   {
     name: "Mr. Ranjith Bandara",
     role: "Navigation & Safety Officer",
     students: "4.2k+",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&q=80",
   },
 ];
 

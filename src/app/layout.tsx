@@ -17,7 +17,7 @@ export default function RootLayout({
       <head>
         <link
           rel="icon"
-          href="https://www.fisheries.gov.lk/web/templates/poora_temp/images/new/logo.png"
+          href="/favicon.png"
           type="image/png"
         />
         <link

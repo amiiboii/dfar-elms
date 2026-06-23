@@ -21,23 +21,16 @@ export default function Navbar() {
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 flex items-center h-16">
-        {/* Logo + Name — tight together */}
-        <Link href="/" className="flex items-center gap-1.5 shrink-0">
+        <Link href="/" className="shrink-0">
           <img
-            src="https://www.fisheries.gov.lk/web/templates/poora_temp/images/new/logo.png"
-            alt="DFAR"
-            className="h-10 w-auto"
+            src="/logo-black.png"
+            alt="Ministry of Fisheries, Aquatic and Ocean Resources"
+            className="h-10 sm:h-12 w-auto"
           />
-          <div className="leading-none">
-            <div className="text-primary font-bold text-[11px] sm:text-[13px] whitespace-nowrap">{t("dept_fisheries")}</div>
-            <div className="text-primary-dark text-[9px] sm:text-[11px] whitespace-nowrap">{t("aquatic_resources")}</div>
-          </div>
         </Link>
 
-        {/* Spacer */}
         <div className="flex-1" />
 
-        {/* Nav links */}
         <nav className="hidden lg:flex items-center gap-0.5">
           {navItems.map((item) => (
             <div
@@ -66,7 +59,6 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Buttons */}
         <div className="flex items-center gap-2 ml-4">
           <Link href="/register" className="hidden sm:inline-flex items-center px-4 py-1.5 border-2 border-primary text-primary text-sm font-semibold rounded hover:bg-primary hover:text-white transition">
             {t("register")}
@@ -83,7 +75,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t px-4 py-3 space-y-2">
           {navItems.map((item) => (

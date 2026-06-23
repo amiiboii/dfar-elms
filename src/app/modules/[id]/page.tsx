@@ -93,39 +93,91 @@ export default function ModuleDetailPage({ params }: { params: Promise<{ id: str
                     />
                   </div>
                 ) : currentLesson.type === "presentation" ? (
-                  <div className="aspect-video flex items-center justify-center bg-gradient-to-br from-orange-50 to-orange-100">
-                    <div className="text-center p-8">
-                      <i className="fa-solid fa-file-powerpoint text-6xl text-orange-500 mb-4" />
-                      <h3 className="text-xl font-bold text-primary-dark mb-2">{lessonTitle}</h3>
-                      <p className="text-gray-mid text-sm mb-4">PowerPoint presentation — click to view full screen</p>
-                      <button className="bg-primary text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-primary-dark transition">
-                        <i className="fa-solid fa-expand mr-2" />View Presentation
-                      </button>
+                  <div className="aspect-video bg-white overflow-hidden">
+                    <div className="h-full flex flex-col">
+                      <div className="bg-gradient-to-r from-primary-dark to-primary p-6 sm:p-8 text-white">
+                        <div className="flex items-center gap-2 text-xs text-white/60 mb-2">
+                          <i className="fa-solid fa-file-powerpoint" /> DFAR E-LMS Presentation
+                        </div>
+                        <h3 className="text-xl sm:text-2xl font-bold">{lessonTitle}</h3>
+                      </div>
+                      <div className="flex-1 p-6 sm:p-8 bg-gradient-to-b from-gray-50 to-white">
+                        <div className="grid grid-cols-2 gap-4 mb-4">
+                          <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                            <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mb-2">
+                              <i className="fa-solid fa-shield-halved text-primary text-sm" />
+                            </div>
+                            <h4 className="font-semibold text-sm text-primary-dark">Safety Protocols</h4>
+                            <p className="text-xs text-gray-mid mt-1">International maritime safety standards and DFAR regulations</p>
+                          </div>
+                          <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                            <div className="w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center mb-2">
+                              <i className="fa-solid fa-list-check text-accent text-sm" />
+                            </div>
+                            <h4 className="font-semibold text-sm text-primary-dark">Compliance Checklist</h4>
+                            <p className="text-xs text-gray-mid mt-1">Pre-departure safety checks and equipment verification</p>
+                          </div>
+                        </div>
+                        <div className="flex items-center justify-between text-sm text-gray-mid border-t pt-3">
+                          <span>Slide 1 of 24</span>
+                          <div className="flex gap-2">
+                            <button className="px-3 py-1.5 bg-gray-100 rounded hover:bg-gray-200 transition"><i className="fa-solid fa-chevron-left" /></button>
+                            <button className="px-3 py-1.5 bg-primary text-white rounded hover:bg-primary-dark transition"><i className="fa-solid fa-chevron-right" /></button>
+                            <button className="px-3 py-1.5 bg-gray-100 rounded hover:bg-gray-200 transition"><i className="fa-solid fa-expand" /></button>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 ) : currentLesson.type === "reading" ? (
-                  <div className="aspect-video flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100">
-                    <div className="text-center p-8 max-w-lg">
-                      <i className="fa-solid fa-book-open text-6xl text-blue-500 mb-4" />
-                      <h3 className="text-xl font-bold text-primary-dark mb-2">{lessonTitle}</h3>
-                      <p className="text-gray-mid text-sm mb-4">PDF reading material — download or view online</p>
-                      <div className="flex gap-3 justify-center">
-                        <button className="bg-primary text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-primary-dark transition">
-                          <i className="fa-solid fa-eye mr-2" />Read Online
-                        </button>
-                        <button className="border-2 border-primary text-primary px-6 py-2.5 rounded-lg font-semibold hover:bg-primary hover:text-white transition">
-                          <i className="fa-solid fa-download mr-2" />Download PDF
-                        </button>
+                  <div className="aspect-video bg-white overflow-hidden">
+                    <div className="h-full flex flex-col">
+                      <div className="bg-gradient-to-r from-blue-700 to-blue-500 p-4 text-white flex items-center justify-between">
+                        <div className="flex items-center gap-2 text-sm">
+                          <i className="fa-solid fa-file-pdf" />
+                          <span className="font-medium">{lessonTitle}.pdf</span>
+                        </div>
+                        <div className="flex gap-2">
+                          <button className="px-3 py-1 bg-white/20 rounded text-xs hover:bg-white/30 transition">
+                            <i className="fa-solid fa-download mr-1" />Download
+                          </button>
+                          <button className="px-3 py-1 bg-white/20 rounded text-xs hover:bg-white/30 transition">
+                            <i className="fa-solid fa-print mr-1" />Print
+                          </button>
+                        </div>
+                      </div>
+                      <div className="flex-1 p-6 sm:p-8 overflow-auto bg-gray-50">
+                        <div className="max-w-lg mx-auto bg-white shadow-md p-6 sm:p-8 rounded">
+                          <div className="text-center mb-4 pb-4 border-b">
+                            <img src="/logo-black.png" alt="DFAR" className="h-8 mx-auto mb-2" />
+                            <p className="text-[10px] text-gray-400">Department of Fisheries and Aquatic Resources</p>
+                          </div>
+                          <h4 className="font-bold text-primary-dark text-lg mb-3">{lessonTitle}</h4>
+                          <div className="space-y-2 text-sm text-gray-600 leading-relaxed">
+                            <p>This document covers the essential knowledge required for this module section. All fisheries personnel must be familiar with these guidelines.</p>
+                            <p className="font-semibold text-primary-dark mt-3">Key Topics:</p>
+                            <ul className="list-disc pl-5 space-y-1">
+                              <li>International standards and best practices</li>
+                              <li>Sri Lankan maritime regulations and DFAR directives</li>
+                              <li>Practical guidelines for field implementation</li>
+                              <li>Case studies from Sri Lankan fisheries districts</li>
+                            </ul>
+                          </div>
+                          <div className="text-center mt-4 text-xs text-gray-400">Page 1 of 12</div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 ) : (
-                  <div className="aspect-video flex items-center justify-center bg-gradient-to-br from-green-50 to-green-100">
-                    <div className="text-center p-8">
-                      <i className="fa-solid fa-clipboard-question text-6xl text-green-600 mb-4" />
+                  <div className="aspect-video bg-white overflow-hidden">
+                    <div className="h-full flex flex-col items-center justify-center bg-gradient-to-br from-green-50 to-emerald-50 p-8">
+                      <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                        <i className="fa-solid fa-clipboard-question text-3xl text-green-600" />
+                      </div>
                       <h3 className="text-xl font-bold text-primary-dark mb-2">{lessonTitle}</h3>
-                      <p className="text-gray-mid text-sm mb-4">Quick knowledge check — test your understanding</p>
-                      <button className="bg-green-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-green-700 transition">
+                      <p className="text-gray-mid text-sm mb-1">5 multiple choice questions</p>
+                      <p className="text-gray-mid text-xs mb-6">Test your understanding of this section before moving on</p>
+                      <button className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition">
                         <i className="fa-solid fa-play mr-2" />Start Quiz
                       </button>
                     </div>

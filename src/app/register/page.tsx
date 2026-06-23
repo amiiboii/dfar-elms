@@ -16,7 +16,7 @@ export default function RegisterPage() {
           <div className="bg-white rounded-2xl shadow-xl p-8">
             <div className="text-center mb-8">
               <img
-                src="https://www.fisheries.gov.lk/web/templates/poora_temp/images/new/logo.png"
+                src="/logo-black.png"
                 alt="DFAR"
                 className="h-16 mx-auto mb-4"
               />

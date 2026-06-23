@@ -60,10 +60,10 @@ export const translations: Record<Lang, Record<string, string>> = {
 
     // Registration
     register_today: "Register Today",
-    register_title: "Start Your Fisheries Learning Journey —",
+    register_title: "Start Your Fisheries Learning Journey -",
     free: "Free!",
     register_desc: "Access over 150 learning modules in Sinhala, Tamil, and English. Earn recognized certificates to advance your career in the fisheries sector.",
-    benefit_1: "Self-paced learning — study from anywhere",
+    benefit_1: "Self-paced learning - study from anywhere",
     benefit_2: "Official DFAR certificates upon completion",
     benefit_3: "Available in Sinhala, Tamil & English",
     benefit_4: "Required for boat licensing & compliance",
@@ -222,10 +222,10 @@ export const translations: Record<Lang, Record<string, string>> = {
     export_standards: "අපනයන ප්‍රමිති",
 
     register_today: "අද ලියාපදිංචි වන්න",
-    register_title: "ඔබේ ධීවර ඉගෙනුම් ගමන ආරම්භ කරන්න —",
+    register_title: "ඔබේ ධීවර ඉගෙනුම් ගමන ආරම්භ කරන්න -",
     free: "නොමිලේ!",
     register_desc: "සිංහල, දෙමළ සහ ඉංග්‍රීසි භාෂාවලින් ඉගෙනුම් මොඩියුල 150කට වැඩි ප්‍රමාණයකට ප්‍රවේශ වන්න.",
-    benefit_1: "ස්වයං-වේගයෙන් ඉගෙනුම — ඕනෑම තැනක සිට අධ්‍යයනය කරන්න",
+    benefit_1: "ස්වයං-වේගයෙන් ඉගෙනුම - ඕනෑම තැනක සිට අධ්‍යයනය කරන්න",
     benefit_2: "සම්පූර්ණ කිරීමෙන් පසු නිල DFAR සහතික",
     benefit_3: "සිංහල, දෙමළ සහ ඉංග්‍රීසි භාෂාවලින්",
     benefit_4: "බෝට්ටු බලපත්‍ර සහ අනුකූලතාව සඳහා අවශ්‍යයි",
@@ -374,10 +374,10 @@ export const translations: Record<Lang, Record<string, string>> = {
     export_standards: "ஏற்றுமதி தரநிலைகள்",
 
     register_today: "இன்றே பதிவு செய்யுங்கள்",
-    register_title: "உங்கள் மீன்பிடி கற்றல் பயணத்தைத் தொடங்குங்கள் —",
+    register_title: "உங்கள் மீன்பிடி கற்றல் பயணத்தைத் தொடங்குங்கள் -",
     free: "இலவசம்!",
     register_desc: "சிங்களம், தமிழ் மற்றும் ஆங்கிலத்தில் 150+ கற்றல் தொகுதிகளை அணுகுங்கள்.",
-    benefit_1: "சுய-வேக கற்றல் — எங்கிருந்தும் படிக்கலாம்",
+    benefit_1: "சுய-வேக கற்றல் - எங்கிருந்தும் படிக்கலாம்",
     benefit_2: "முடித்தவுடன் அதிகாரப்பூர்வ DFAR சான்றிதழ்கள்",
     benefit_3: "சிங்களம், தமிழ் & ஆங்கிலத்தில் கிடைக்கும்",
     benefit_4: "படகு உரிமம் & இணக்கத்திற்கு அவசியம்",

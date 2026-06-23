@@ -14,18 +14,13 @@ export default function Footer() {
     <footer className="bg-[#0a1a3a] text-white pt-14 pb-6">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-10">
-          {/* About */}
           <div>
-            <div className="flex items-center gap-2 mb-5">
+            <div className="mb-5">
               <img
-                src="https://www.fisheries.gov.lk/web/templates/poora_temp/images/new/logo.png"
-                alt="DFAR"
-                className="h-10 w-10 object-contain shrink-0"
+                src="/logo.png"
+                alt="Ministry of Fisheries"
+                className="h-12 w-auto"
               />
-              <div className="leading-none min-w-0">
-                <div className="font-bold text-sm truncate">Dept. of Fisheries</div>
-                <div className="text-[11px] text-white/60 mt-0.5 truncate">& Aquatic Resources</div>
-              </div>
             </div>
             <p className="text-white/60 text-sm mb-5 leading-relaxed">
               The official E-Learning Management System of the Department of Fisheries and Aquatic Resources, Sri Lanka.
@@ -46,7 +41,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Module Categories */}
           <div>
             <h3 className="font-bold text-base mb-5 text-white">Module Categories</h3>
             <ul className="space-y-2.5">
@@ -60,7 +54,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Support */}
           <div>
             <h3 className="font-bold text-base mb-5 text-white">Support</h3>
             <ul className="space-y-2.5">
@@ -74,7 +67,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Quick Links + Social */}
           <div>
             <h3 className="font-bold text-base mb-5 text-white">Quick Links</h3>
             <ul className="space-y-2.5 text-sm text-white/60">
@@ -101,7 +93,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-white/40 gap-2">
-          <p>© 2026 Department of Fisheries and Aquatic Resources. All Rights Reserved.</p>
+          <p>2026 Department of Fisheries and Aquatic Resources. All Rights Reserved.</p>
           <p>
             Developed by{" "}
             <a href="https://futuora.com/" target="_blank" rel="noopener noreferrer" className="text-accent font-semibold hover:text-yellow-300 transition">

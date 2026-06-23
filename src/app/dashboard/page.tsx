@@ -47,7 +47,7 @@ export default function DashboardPage() {
             <img src={user.avatar} alt={user.name} className="w-20 h-20 rounded-full object-cover border-4 border-primary/20" />
             <div className="text-center md:text-left flex-1">
               <h1 className="text-2xl font-bold text-primary-dark">{user.name}</h1>
-              <p className="text-gray-mid text-sm">{user.role} — {user.district} District</p>
+              <p className="text-gray-mid text-sm">{user.role} - {user.district} District</p>
               <p className="text-gray-mid text-xs mt-1">Member since {user.joined}</p>
             </div>
             <div className="flex gap-3">

@@ -13,7 +13,7 @@ export default function Registration() {
           <div className="text-white">
             <p className="text-accent font-semibold mb-2 uppercase tracking-wider text-sm">Register Today</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Start Your Fisheries Learning Journey — <span className="text-accent">Free!</span>
+              Start Your Fisheries Learning Journey - <span className="text-accent">Free!</span>
             </h2>
             <p className="text-white/75 mb-8 text-lg">
               Access over 150 learning modules in Sinhala, Tamil, and English. Earn recognized certificates to advance your career in the fisheries sector.
@@ -22,7 +22,7 @@ export default function Registration() {
             <ul className="space-y-3 text-white/90">
               <li className="flex items-center gap-3">
                 <i className="fa-solid fa-circle-check text-accent" />
-                Self-paced learning — study from anywhere
+                Self-paced learning - study from anywhere
               </li>
               <li className="flex items-center gap-3">
                 <i className="fa-solid fa-circle-check text-accent" />

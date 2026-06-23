@@ -98,7 +98,7 @@ export default function CertificatePage({ params }: { params: Promise<{ id: stri
                 {/* Header */}
                 <div style={{ textAlign: "center", marginBottom: "32px" }}>
                   <img
-                    src="https://www.fisheries.gov.lk/web/templates/poora_temp/images/new/logo.png"
+                    src="/logo-black.png"
                     alt="DFAR"
                     style={{ height: "64px", margin: "0 auto 12px" }}
                   />
