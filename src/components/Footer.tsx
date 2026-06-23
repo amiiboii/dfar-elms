@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const moduleLinks = [
   "Maritime Safety", "Navigation", "Aquaculture", "Fish Processing",
   "Licensing", "Conservation", "Export Standards",
@@ -11,65 +13,78 @@ export default function Footer() {
   return (
     <footer className="bg-[#0a1a3a] text-white pt-14 pb-6">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-10">
+          {/* About */}
           <div>
-            <div className="flex items-center gap-3 mb-5">
+            <div className="flex items-center gap-2 mb-5">
               <img
                 src="https://www.fisheries.gov.lk/web/templates/poora_temp/images/new/logo.png"
-                alt="DFAR Logo"
-                className="h-12 w-auto brightness-200"
+                alt="DFAR"
+                className="h-10 w-10 object-contain shrink-0"
               />
-              <div>
-                <div className="font-bold text-sm">Dept. of Fisheries</div>
-                <div className="text-xs text-white/60">& Aquatic Resources</div>
+              <div className="leading-none min-w-0">
+                <div className="font-bold text-sm truncate">Dept. of Fisheries</div>
+                <div className="text-[11px] text-white/60 mt-0.5 truncate">& Aquatic Resources</div>
               </div>
             </div>
             <p className="text-white/60 text-sm mb-5 leading-relaxed">
-              The official E-Learning Management System of the Department of Fisheries and Aquatic Resources, Sri Lanka. Empowering fisheries communities through digital education.
+              The official E-Learning Management System of the Department of Fisheries and Aquatic Resources, Sri Lanka.
             </p>
-            <div className="space-y-2 text-sm text-white/70">
-              <div><i className="fa-solid fa-envelope mr-2 text-accent" />info@fisheries.gov.lk</div>
-              <div><i className="fa-solid fa-building mr-2 text-accent" />New Secretariat, Maligawatta, Colombo 10</div>
-              <div><i className="fa-solid fa-phone mr-2 text-accent" />+94 112 446 183 / 4</div>
+            <div className="space-y-2.5 text-sm text-white/70">
+              <div className="flex items-start gap-2">
+                <i className="fa-solid fa-envelope text-accent mt-0.5 text-xs shrink-0" />
+                <span>info@fisheries.gov.lk</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <i className="fa-solid fa-building text-accent mt-0.5 text-xs shrink-0" />
+                <span>New Secretariat, Maligawatta, Colombo 10</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <i className="fa-solid fa-phone text-accent mt-0.5 text-xs shrink-0" />
+                <span>+94 112 446 183 / 4</span>
+              </div>
             </div>
           </div>
 
+          {/* Module Categories */}
           <div>
-            <h3 className="font-bold text-base mb-5">Module Categories</h3>
+            <h3 className="font-bold text-base mb-5 text-white">Module Categories</h3>
             <ul className="space-y-2.5">
               {moduleLinks.map((link) => (
                 <li key={link}>
-                  <a href="#" className="text-sm text-white/60 hover:text-accent transition flex items-center gap-2">
-                    <i className="fa-solid fa-chevron-right text-[8px] text-accent/50" />{link}
-                  </a>
+                  <Link href="/modules" className="text-sm text-white/60 hover:text-accent transition flex items-center gap-2">
+                    <i className="fa-solid fa-chevron-right text-[8px] text-accent/50 shrink-0" />{link}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
+          {/* Support */}
           <div>
-            <h3 className="font-bold text-base mb-5">Support</h3>
+            <h3 className="font-bold text-base mb-5 text-white">Support</h3>
             <ul className="space-y-2.5">
               {supportLinks.map((link) => (
                 <li key={link}>
                   <a href="#" className="text-sm text-white/60 hover:text-accent transition flex items-center gap-2">
-                    <i className="fa-solid fa-chevron-right text-[8px] text-accent/50" />{link}
+                    <i className="fa-solid fa-chevron-right text-[8px] text-accent/50 shrink-0" />{link}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
+          {/* Quick Links + Social */}
           <div>
-            <h3 className="font-bold text-base mb-5">Quick Links</h3>
+            <h3 className="font-bold text-base mb-5 text-white">Quick Links</h3>
             <ul className="space-y-2.5 text-sm text-white/60">
-              <li><a href="https://www.fisheries.gov.lk" className="hover:text-accent transition flex items-center gap-2" target="_blank" rel="noopener noreferrer"><i className="fa-solid fa-chevron-right text-[8px] text-accent/50" />DFAR Official Website</a></li>
-              <li><a href="https://www.gov.lk" className="hover:text-accent transition flex items-center gap-2" target="_blank" rel="noopener noreferrer"><i className="fa-solid fa-chevron-right text-[8px] text-accent/50" />Government of Sri Lanka</a></li>
-              <li><a href="#" className="hover:text-accent transition flex items-center gap-2"><i className="fa-solid fa-chevron-right text-[8px] text-accent/50" />Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-accent transition flex items-center gap-2"><i className="fa-solid fa-chevron-right text-[8px] text-accent/50" />Terms of Use</a></li>
+              <li><a href="https://www.fisheries.gov.lk" className="hover:text-accent transition flex items-center gap-2" target="_blank" rel="noopener noreferrer"><i className="fa-solid fa-chevron-right text-[8px] text-accent/50 shrink-0" />DFAR Official Website</a></li>
+              <li><a href="https://www.gov.lk" className="hover:text-accent transition flex items-center gap-2" target="_blank" rel="noopener noreferrer"><i className="fa-solid fa-chevron-right text-[8px] text-accent/50 shrink-0" />Government of Sri Lanka</a></li>
+              <li><a href="#" className="hover:text-accent transition flex items-center gap-2"><i className="fa-solid fa-chevron-right text-[8px] text-accent/50 shrink-0" />Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-accent transition flex items-center gap-2"><i className="fa-solid fa-chevron-right text-[8px] text-accent/50 shrink-0" />Terms of Use</a></li>
             </ul>
 
-            <h3 className="font-bold text-base mt-8 mb-4">Get Connected</h3>
+            <h3 className="font-bold text-base mt-8 mb-4 text-white">Get Connected</h3>
             <div className="flex gap-3">
               {[
                 { icon: "fa-brands fa-facebook-f", color: "hover:bg-blue-600" },
@@ -85,10 +100,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-white/40">
+        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-white/40 gap-2">
           <p>© 2026 Department of Fisheries and Aquatic Resources. All Rights Reserved.</p>
-          <p className="mt-2 md:mt-0">
-            Developed by <span className="text-accent font-semibold">Futura Engineering</span>
+          <p>
+            Developed by{" "}
+            <a href="https://futuora.com/" target="_blank" rel="noopener noreferrer" className="text-accent font-semibold hover:text-yellow-300 transition">
+              Futura Engineering
+            </a>
           </p>
         </div>
       </div>

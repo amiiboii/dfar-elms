@@ -20,20 +20,25 @@ export default function Navbar() {
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-18">
-        <Link href="/" className="flex items-center gap-2 shrink-0">
+      <div className="max-w-7xl mx-auto px-4 flex items-center h-16">
+        {/* Logo + Name — tight together */}
+        <Link href="/" className="flex items-center gap-1.5 shrink-0">
           <img
             src="https://www.fisheries.gov.lk/web/templates/poora_temp/images/new/logo.png"
-            alt="DFAR Logo"
+            alt="DFAR"
             className="h-10 w-auto"
           />
-          <div className="leading-tight">
-            <div className="text-primary font-bold text-xs sm:text-sm whitespace-nowrap">{t("dept_fisheries")}</div>
-            <div className="text-primary-dark text-[10px] sm:text-xs whitespace-nowrap">{t("aquatic_resources")}</div>
+          <div className="leading-none">
+            <div className="text-primary font-bold text-[11px] sm:text-[13px] whitespace-nowrap">{t("dept_fisheries")}</div>
+            <div className="text-primary-dark text-[9px] sm:text-[11px] whitespace-nowrap">{t("aquatic_resources")}</div>
           </div>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-1">
+        {/* Spacer */}
+        <div className="flex-1" />
+
+        {/* Nav links */}
+        <nav className="hidden lg:flex items-center gap-0.5">
           {navItems.map((item) => (
             <div
               key={item.label}
@@ -43,13 +48,13 @@ export default function Navbar() {
             >
               <Link
                 href={item.href}
-                className="px-3 py-2 text-sm font-medium text-primary-dark hover:text-primary transition flex items-center gap-1"
+                className="px-2.5 py-2 text-[13px] font-medium text-primary-dark hover:text-primary transition flex items-center gap-1"
               >
                 {item.label}
-                {item.dropdown && <i className="fa-solid fa-chevron-down text-[10px]" />}
+                {item.dropdown && <i className="fa-solid fa-chevron-down text-[9px]" />}
               </Link>
               {item.dropdown && openDropdown === item.label && (
-                <div className="absolute top-full left-0 bg-white shadow-lg rounded-md py-2 min-w-[200px] border border-gray-100">
+                <div className="absolute top-full left-0 bg-white shadow-lg rounded-md py-2 min-w-[200px] border border-gray-100 z-50">
                   {item.dropdown.map((sub) => (
                     <Link key={sub} href="/modules" className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition">
                       {sub}
@@ -61,15 +66,16 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
-          <Link href="/register" className="hidden sm:inline-flex items-center px-5 py-2 border-2 border-primary text-primary text-sm font-semibold rounded hover:bg-primary hover:text-white transition">
+        {/* Buttons */}
+        <div className="flex items-center gap-2 ml-4">
+          <Link href="/register" className="hidden sm:inline-flex items-center px-4 py-1.5 border-2 border-primary text-primary text-sm font-semibold rounded hover:bg-primary hover:text-white transition">
             {t("register")}
           </Link>
-          <Link href="/login" className="hidden sm:inline-flex items-center px-5 py-2 bg-primary text-white text-sm font-semibold rounded hover:bg-primary-dark transition">
+          <Link href="/login" className="hidden sm:inline-flex items-center px-4 py-1.5 bg-primary text-white text-sm font-semibold rounded hover:bg-primary-dark transition">
             {t("login")}
           </Link>
           <button
-            className="lg:hidden text-primary-dark text-xl"
+            className="lg:hidden text-primary-dark text-xl ml-1"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             <i className={`fa-solid ${mobileOpen ? "fa-xmark" : "fa-bars"}`} />
@@ -77,6 +83,7 @@ export default function Navbar() {
         </div>
       </div>
 
+      {/* Mobile menu */}
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t px-4 py-3 space-y-2">
           {navItems.map((item) => (
