@@ -1,5 +1,5 @@
 "use client";
-import { use, useRef } from "react";
+import { use, useRef, useState } from "react";
 import TopBar from "@/components/TopBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -12,6 +12,9 @@ export default function CertificatePage({ params }: { params: Promise<{ id: stri
   const { lang } = useLang();
   const mod = modules.find((m) => m.id === id);
   const certRef = useRef<HTMLDivElement>(null);
+  const [emailModal, setEmailModal] = useState(false);
+  const [emailTo, setEmailTo] = useState("");
+  const [emailSent, setEmailSent] = useState(false);
 
   if (!mod) {
     return (
@@ -57,18 +60,24 @@ export default function CertificatePage({ params }: { params: Promise<{ id: stri
             <Link href="/dashboard" className="text-primary font-medium text-sm hover:text-primary-dark">
               <i className="fa-solid fa-arrow-left mr-2" />Back to Dashboard
             </Link>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
               <button
                 onClick={handlePrint}
-                className="bg-primary text-white px-6 py-2.5 rounded-lg font-semibold text-sm hover:bg-primary-dark transition"
+                className="bg-primary text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-primary-dark transition"
               >
-                <i className="fa-solid fa-print mr-2" />Print Certificate
+                <i className="fa-solid fa-print mr-2" />Print
               </button>
               <button
                 onClick={handlePrint}
-                className="border-2 border-primary text-primary px-6 py-2.5 rounded-lg font-semibold text-sm hover:bg-primary hover:text-white transition"
+                className="border-2 border-primary text-primary px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-primary hover:text-white transition"
               >
                 <i className="fa-solid fa-download mr-2" />Download PDF
+              </button>
+              <button
+                onClick={() => setEmailModal(true)}
+                className="bg-green-600 text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-green-700 transition"
+              >
+                <i className="fa-solid fa-envelope mr-2" />Email Certificate
               </button>
             </div>
           </div>
@@ -203,6 +212,88 @@ export default function CertificatePage({ params }: { params: Promise<{ id: stri
             </div>
           </div>
         </div>
+
+        {/* Email Modal */}
+        {emailModal && (
+          <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={() => { setEmailModal(false); setEmailSent(false); }}>
+            <div className="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-md" onClick={(e) => e.stopPropagation()}>
+              {emailSent ? (
+                <div className="text-center py-6">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i className="fa-solid fa-check text-3xl text-green-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-primary-dark mb-2">Certificate Sent!</h3>
+                  <p className="text-gray-mid text-sm mb-4">
+                    The certificate has been sent to <strong>{emailTo}</strong>
+                  </p>
+                  <button
+                    onClick={() => { setEmailModal(false); setEmailSent(false); }}
+                    className="bg-primary text-white px-6 py-2.5 rounded-lg font-semibold text-sm hover:bg-primary-dark transition"
+                  >
+                    Close
+                  </button>
+                </div>
+              ) : (
+                <>
+                  <div className="flex items-center justify-between mb-5">
+                    <h3 className="text-lg font-bold text-primary-dark">
+                      <i className="fa-solid fa-envelope text-primary mr-2" />Email Certificate
+                    </h3>
+                    <button onClick={() => setEmailModal(false)} className="text-gray-400 hover:text-gray-600">
+                      <i className="fa-solid fa-xmark text-lg" />
+                    </button>
+                  </div>
+                  <p className="text-sm text-gray-mid mb-4">
+                    Send this certificate as a PDF attachment to any email address.
+                  </p>
+                  <form onSubmit={(e) => { e.preventDefault(); setEmailSent(true); }} className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-medium text-primary-dark mb-1.5">Recipient Email</label>
+                      <input
+                        type="email"
+                        required
+                        value={emailTo}
+                        onChange={(e) => setEmailTo(e.target.value)}
+                        placeholder="Enter email address"
+                        className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-primary-dark mb-1.5">Subject</label>
+                      <input
+                        type="text"
+                        defaultValue={`DFAR E-LMS Certificate - ${title}`}
+                        className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm text-gray-600 bg-gray-50"
+                        readOnly
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-primary-dark mb-1.5">Message (optional)</label>
+                      <textarea
+                        rows={3}
+                        placeholder="Add a personal message..."
+                        className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none resize-none"
+                      />
+                    </div>
+                    <div className="bg-gray-50 rounded-lg p-3 flex items-center gap-3 text-sm">
+                      <i className="fa-solid fa-paperclip text-gray-400" />
+                      <div>
+                        <p className="font-medium text-primary-dark">Certificate_{certId}.pdf</p>
+                        <p className="text-xs text-gray-mid">PDF attachment - auto generated</p>
+                      </div>
+                    </div>
+                    <button
+                      type="submit"
+                      className="w-full bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-700 transition"
+                    >
+                      <i className="fa-solid fa-paper-plane mr-2" />Send Certificate
+                    </button>
+                  </form>
+                </>
+              )}
+            </div>
+          </div>
+        )}
       </section>
 
       <Footer />

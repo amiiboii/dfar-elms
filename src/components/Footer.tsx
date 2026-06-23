@@ -17,9 +17,9 @@ export default function Footer() {
           <div>
             <div className="mb-5">
               <img
-                src="/logo.png"
+                src="/logo-black.png"
                 alt="Ministry of Fisheries"
-                className="h-12 w-auto"
+                className="h-10 w-auto invert brightness-200"
               />
             </div>
             <p className="text-white/60 text-sm mb-5 leading-relaxed">
@@ -97,7 +97,7 @@ export default function Footer() {
           <p>
             Developed by{" "}
             <a href="https://futuora.com/" target="_blank" rel="noopener noreferrer" className="text-accent font-semibold hover:text-yellow-300 transition">
-              Futura Engineering
+              Futuora Engineering
             </a>
           </p>
         </div>
