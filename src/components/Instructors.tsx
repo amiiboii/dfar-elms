@@ -61,7 +61,7 @@ export default function Instructors() {
         </div>
 
         <div className="text-center mt-10">
-          <a href="#" className="inline-flex items-center gap-2 border-2 border-primary text-primary font-semibold px-8 py-3 rounded-lg hover:bg-primary hover:text-white transition">
+          <a href="/modules" className="inline-flex items-center gap-2 border-2 border-primary text-primary font-semibold px-8 py-3 rounded-lg hover:bg-primary hover:text-white transition">
             View All Instructors <i className="fa-solid fa-arrow-right" />
           </a>
         </div>

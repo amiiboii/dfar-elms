@@ -15,7 +15,7 @@ export default function Navbar() {
     { label: t("instructors"), href: "/#instructors" },
     { label: t("events"), href: "/#events" },
     { label: t("news"), href: "/#news" },
-    { label: t("contact"), href: "/#contact" },
+    { label: t("contact"), href: "/contact" },
   ];
 
   return (

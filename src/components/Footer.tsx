@@ -17,9 +17,9 @@ export default function Footer() {
           <div>
             <div className="mb-5">
               <img
-                src="/logo-black.png"
-                alt="Ministry of Fisheries"
-                className="h-10 w-auto invert brightness-200"
+                src="/favicon.png"
+                alt="DFAR"
+                className="h-12 w-auto"
               />
             </div>
             <p className="text-white/60 text-sm mb-5 leading-relaxed">
