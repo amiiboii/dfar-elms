@@ -57,7 +57,7 @@ export const modules: Module[] = [
     instructor: "Mr. Ranjith Bandara",
     progress: 65,
     lessons: [
-      { id: "l1", title: "Introduction to Maritime Safety", titleSi: "සමුද්‍ර ආරක්ෂාව හැඳින්වීම", titleTa: "கடல் பாதுகாப்பு அறிமுகம்", type: "video", duration: "25:00", videoUrl: "https://www.youtube.com/embed/Rh0k0rHkBCg", completed: true },
+      { id: "l1", title: "Introduction to Maritime Safety", titleSi: "සමුද්‍ර ආරක්ෂාව හැඳින්වීම", titleTa: "கடல் பாதுகாப்பு அறிமுகம்", type: "video", duration: "25:00", videoUrl: "https://www.youtube.com/embed/x1kzaDlXad8", completed: true },
       { id: "l2", title: "Safety Equipment & Life Jackets", titleSi: "ආරක්ෂක උපකරණ සහ ජීවිත කබා", titleTa: "பாதுகாப்பு உபகரணங்கள் & உயிர் காப்பு ஜாக்கெட்கள்", type: "video", duration: "30:00", videoUrl: "https://www.youtube.com/embed/3_FweaRGUYo", completed: true },
       { id: "l3", title: "Emergency Procedures at Sea", titleSi: "මුහුදේ හදිසි ක්‍රියා පටිපාටි", titleTa: "கடலில் அவசர நடைமுறைகள்", type: "video", duration: "35:00", videoUrl: "https://www.youtube.com/embed/IJNR2EpS0jw", completed: true },
       { id: "l4", title: "Weather Awareness for Fishermen", titleSi: "ධීවරයන් සඳහා කාලගුණ දැනුවත්භාවය", titleTa: "மீனவர்களுக்கான வானிலை விழிப்புணர்வு", type: "presentation", duration: "20:00", completed: true },
